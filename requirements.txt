@@ -1,0 +1,13 @@
+numpy
+pandas
+requests
+python-dotenv
+yfinance
+matplotlib
+seaborn
+scipy
+scikit-learn
+torch
+tqdm
+jupyter
+ipykernel
