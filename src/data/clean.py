@@ -49,9 +49,9 @@ def build_features(final_df: pd.DataFrame) -> pd.DataFrame:
     cols = [
         "optionSymbol", "expiration", "dte",
         "intrinsicValue", "extrinsicValue",
-        "strike", "mid", "underlyingPrice",
+        "strike", "bid", "ask", "mid", "underlyingPrice",
         "spot_price", "snapshot_date",
-        "volume", "inTheMoney",
+        "volume", "inTheMoney"
     ]
     missing = [c for c in cols if c not in final_df.columns]
     if missing:

@@ -94,6 +94,7 @@ def ingest_bronze(
     end_date: str,
     side: str = "call",
     spot_resolution: str = "D",
+    expiration: Optional[str] = None,
     sleep_sec: float = 1.0,
 ) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -104,13 +105,20 @@ def ingest_bronze(
             print(f"skip {query_date}: exists")
             continue
 
-        chain_url = build_chain_url(client.base_url, symbol, date=query_date, side=side)
+        chain_url = build_chain_url(client.base_url, 
+                                    symbol, 
+                                    date=query_date, 
+                                    expiration=expiration, 
+                                    side=side)
         chain = client.get_json(chain_url)
         if chain.get("_status_code") == 404:
             print(f"skip {query_date}: no chain (holiday/closed)")
             continue
 
-        spot_url = build_spot_url(client.base_url, spot_resolution, symbol, date=query_date)
+        spot_url = build_spot_url(client.base_url, 
+                                  spot_resolution, 
+                                  symbol, 
+                                  date=query_date)
         spot = client.get_json(spot_url)
         if spot.get("_status_code") == 404:
             print(f"skip {query_date}: no spot (holiday/closed)")

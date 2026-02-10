@@ -29,8 +29,9 @@ def main():
         client=client,
         out_dir=RAW_DIR,
         symbol="SPY",
-        start_date="2026-02-01",
+        start_date="2025-01-01",
         end_date="2026-02-03",
+        expiration="all",
         side="call",
         sleep_sec=2.0,
     )
