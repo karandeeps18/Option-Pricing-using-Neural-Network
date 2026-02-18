@@ -1,3 +1,7 @@
 .env
 data/
 outputs/
+
+# notebook artifacts / large outputs
+Notebooks/output/
+Notebooks/*.csv
