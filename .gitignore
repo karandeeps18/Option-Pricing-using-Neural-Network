@@ -1,6 +1,8 @@
 .env
-data/
+/data/
 outputs/
+__pycache__/
+*.pyc
 
 # notebook artifacts / large outputs
 Notebooks/output/
