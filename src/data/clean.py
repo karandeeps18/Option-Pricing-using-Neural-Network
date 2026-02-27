@@ -1,24 +1,25 @@
 # src/data/clean.py
-from __future__ import annotations
-
+from __future__ import annotations  # for type hint 
 import json
 from pathlib import Path
 from typing import Any, Dict, List, Optional
-
 import numpy as np
 import pandas as pd
 
 
 # SPOT FROM THE 'C' close 
-def _extract_spot_close(spot_payload: Dict[str, Any]) -> Optional[float]:
+def ext_spt(spot_payload: Dict[str, Any]) -> Optional[float]:
     c = spot_payload.get("c")
-    if c is None:
-        return None
+    
+    # if list, first element
     if isinstance(c, list):
-        return float(c[0]) if len(c) else None
-    if isinstance(c, (int, float)):
-        return float(c)
-    return None
+        c = c[0] if c else None
+
+    try:
+        return float(c) if c is not None else None
+    except (ValueError, TypeError):
+        # Handles cases where c might be a string like "N/A" or a nested dict
+        return None
 
 
 # load the bronze data as json 
@@ -36,7 +37,7 @@ def load_bronze(raw_dir: Path) -> pd.DataFrame:
         df = pd.DataFrame(chain)
 
         df["snapshot_date"] = raw.get("snapshot_date")
-        df["spot_price"] = _extract_spot_close(raw.get("spot", {}))
+        df["spot_price"] = ext_spt(raw.get("spot", {}))
 
         frames.append(df)
 
