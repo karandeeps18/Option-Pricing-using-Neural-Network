@@ -31,7 +31,7 @@ def gaussian_weights(
 
     w = np.exp(-(M**2)/(2*lam**2) - beta*T)
 
-    # region-aware floor
+    # snip floor for deep -in money 
     itM = M > 0.05
     w[itM] = np.maximum(w[itM], w_floor_itm)
 

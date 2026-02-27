@@ -1,9 +1,7 @@
-# data_pipeline.py (PROJECT ROOT)
-
 from pathlib import Path
 import sys
 
-# Make src importable
+# src importable
 ROOT = Path(__file__).resolve().parent
 sys.path.append(str(ROOT / "src"))
 
@@ -12,6 +10,7 @@ from data.fetch import MarketDataClient, ingest_bronze
 from data.clean import run_clean_pipeline
 
 
+# ingest bronze data using Market data client
 def main():
     s = Settings()
 
