@@ -99,7 +99,7 @@ If you use this code or the methods it implements, please cite the paper:
   author = {Sonewane, Karandeep},
   year   = {2026},
   note   = {SSRN preprint},
-  url    = {<SSRN_URL_TODO>}
+  url    = {https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6264378}
 }
 ```
 
