@@ -20,3 +20,4 @@ Notebooks/*.csv
 # internal planning artifacts (not for public repo)
 CLEANUP_PLAN.md
 INVENTORY.md
+.claude/
