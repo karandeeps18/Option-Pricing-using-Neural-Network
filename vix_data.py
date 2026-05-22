@@ -2,7 +2,7 @@ import pandas as pd
 import yfinance as yf
 from pathlib import Path
 
-ROOT = Path.cwd().parent  # if in Notebooks/
+ROOT = Path(__file__).resolve().parent  # repo root (this script lives at the repo root)
 PROCESSED = ROOT / "data" / "spy_option" / "processed"
 PROCESSED.mkdir(parents=True, exist_ok=True)
 
