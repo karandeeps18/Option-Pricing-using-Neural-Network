@@ -1,8 +1,7 @@
 # Gaussian Weighted Loss Functions for Neural Network Option Pricing
 
 This repository contains the implementation of the methods described in the paper
-*Gaussian Weighted Loss Functions for Neural Network Option Pricing* by Karandeep Sonewane
-(Fordham University). The paper introduces a liquidity-informed, Gaussian-weighted training
+*Gaussian Weighted Loss Functions for Neural Network Option Pricing*. The paper introduces a liquidity-informed, Gaussian-weighted training
 objective (G-WMSE) that concentrates a neural network's training emphasis on the economically
 relevant regions of the option surface for short-dated and at-the-money contracts, while preserving
 global smoothness through a continuous, differentiable weighting scheme. The objective is studied
