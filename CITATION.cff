@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software or the methods it implements, please cite the paper below."
+title: "Gaussian Weighted Loss Functions for Neural Network Option Pricing"
+authors:
+  - family-names: Sonewane
+    given-names: Karandeep
+    affiliation: "Fordham University"
+    email: kcs@fordham.edu
+repository-code: "https://github.com/karandeeps18/Option-Pricing-using-Neural-Network"
+license: MIT
+date-released: 2026-02-18
+preferred-citation:
+  type: article
+  title: "Gaussian Weighted Loss Functions for Neural Network Option Pricing"
+  authors:
+    - family-names: Sonewane
+      given-names: Karandeep
+      affiliation: "Fordham University"
+  year: 2026
+  url: "<SSRN_URL_TODO>"
